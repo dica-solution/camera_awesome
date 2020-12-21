@@ -470,9 +470,10 @@ class _CameraPreviewWidget extends StatelessWidget {
   Widget buildFittedBox(Orientation orientation) {
     return FittedBox(
       fit: BoxFit.fitWidth,
+      alignment: FractionalOffset.topCenter,
       child: SizedBox(
-        height: orientation == Orientation.portrait ? size.height : size.width,
-        width: orientation == Orientation.portrait ? size.width : size.height,
+        width: orientation == Orientation.portrait ? size.height : size.width,
+        height: orientation == Orientation.portrait ? size.width : size.height,
         child: testMode ? Container() : Texture(textureId: textureId),
       ),
     );
